@@ -33,7 +33,7 @@ public class Posts {
 	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_posts_user"))
 	private User user;
 	
-	@Column(name = "content", nullable = false)
+	@Column(name = "content", nullable = false, length = 2000)
 	private String content;
 	
 	@Column(name = "image", nullable = true)

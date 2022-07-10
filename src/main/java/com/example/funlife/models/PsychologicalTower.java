@@ -42,9 +42,10 @@ public class PsychologicalTower {
 	@Column(name = "pointmax", nullable = false)
 	private int pointMax;
 	
-	@Column(name = "advice", nullable = true)
+	@Column(name = "advice", nullable = true, length = 2000)
 	private String advice;
-
+	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "codesetofquestions", foreignKey = @ForeignKey(name = "FK_psychologicaltowers_setofquestions"))
 	private SetOfQuestions setOfQuestions;
