@@ -29,13 +29,19 @@ public class QuestionAnswer {
 	@Column(name = "id", nullable = true)
 	private int id;
 	
+	@Column(name = "codequestion", nullable = false)
+	private String codeQuestion;
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "codequestion", foreignKey = @ForeignKey(name = "FK_questionanswer_question"))
+	@JoinColumn(name = "codequestion", foreignKey = @ForeignKey(name = "FK_questionanswer_question"), insertable = false, updatable = false)
 	private Question question;
 	
+	@Column(name = "codeanswer", nullable = false)
+	private String codeAnswer;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "codeanswer", foreignKey = @ForeignKey(name = "FK_questionanswer_answer"))
+	@JoinColumn(name = "codeanswer", foreignKey = @ForeignKey(name = "FK_questionanswer_answer"), insertable = false, updatable = false)
 	@JsonIgnoreProperties({"hibernateLazyInitializer"})
 	private Answer answer;
 	

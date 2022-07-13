@@ -45,9 +45,12 @@ public class PsychologicalTower {
 	@Column(name = "advice", nullable = true, length = 2000)
 	private String advice;
 	
+	@Column(name = "codesetofquestions", nullable = false)
+	private String codeSetOfQuestions;
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "codesetofquestions", foreignKey = @ForeignKey(name = "FK_psychologicaltowers_setofquestions"))
+	@JoinColumn(name = "codesetofquestions", foreignKey = @ForeignKey(name = "FK_psychologicaltowers_setofquestions"), insertable = false, updatable = false)
 	private SetOfQuestions setOfQuestions;
 	
 	@JsonIgnore

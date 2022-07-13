@@ -29,13 +29,19 @@ public class UserPsychologist {
 	@Column(name = "id", nullable = false)
 	private int id;
 	
+	@Column(name = "username", nullable = false)
+	private String userName;
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_userpsychologist_user"))
+	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_userpsychologist_user"), insertable = false, updatable = false)
 	private User user;
+	
+	@Column(name = "codepsychologist", nullable = false)
+	private String codePsychologist;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "codepsychologist", foreignKey = @ForeignKey(name = "FK_userpsychologist_psychologist"))
+	@JoinColumn(name = "codepsychologist", foreignKey = @ForeignKey(name = "FK_userpsychologist_psychologist"), insertable = false, updatable = false)
 	@JsonIgnoreProperties({"hibernateLazyInitializer"})
 	private Psychologist psychologist;
 	

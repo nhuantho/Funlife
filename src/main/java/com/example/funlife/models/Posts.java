@@ -28,9 +28,12 @@ public class Posts {
 	@Column(name = "id", nullable = false)
 	private int id;
 	
+	@Column(name = "username", nullable = false)
+	private String userName;
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_posts_user"))
+	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_posts_user"), insertable = false, updatable = false)
 	private User user;
 	
 	@Column(name = "content", nullable = false, length = 2000)

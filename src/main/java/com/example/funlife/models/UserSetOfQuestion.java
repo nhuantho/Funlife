@@ -29,13 +29,19 @@ public class UserSetOfQuestion {
 	@Column(name = "id", nullable = false)
 	private int id;
 	
+	@Column(name = "username", nullable = false)
+	private String userName;
+	
 	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_usersetofquestion_user"))
+	@JoinColumn(name = "username", foreignKey = @ForeignKey(name = "FK_usersetofquestion_user"), insertable = false, updatable = false)
 	private User user;
+	
+	@Column(name = "codesetofquestions", nullable = false)
+	private String codeSetOfQuestions;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "codesetofquestions", foreignKey = @ForeignKey(name = "FK_usersetofquestion_setofquestion"))
+	@JoinColumn(name = "codesetofquestions", foreignKey = @ForeignKey(name = "FK_usersetofquestion_setofquestion"), insertable = false, updatable = false)
 	@JsonIgnoreProperties({"hibernateLazyInitializer"})
 	private SetOfQuestions setOfQuestions;
 	
