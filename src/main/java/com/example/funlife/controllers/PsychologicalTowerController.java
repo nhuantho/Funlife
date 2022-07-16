@@ -16,7 +16,7 @@ import com.example.funlife.models.PsychologicalTower;
 import com.example.funlife.services.PsychologicalTowerService;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin("https://funlifeversion1.netlify.app/")
 public class PsychologicalTowerController {
 	@Autowired 
 	private PsychologicalTowerService psychologicalTowerService;

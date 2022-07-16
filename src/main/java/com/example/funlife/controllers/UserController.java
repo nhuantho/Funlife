@@ -16,7 +16,7 @@ import com.example.funlife.models.User;
 import com.example.funlife.services.UserSevice;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin("https://funlifeversion1.netlify.app/")
 public class UserController {
 	@Autowired 
 	private UserSevice userSevice;
@@ -34,6 +34,11 @@ public class UserController {
 	@GetMapping(path = "/getAllUsers")
 	public List<User> GetAll(){
 		return userSevice.GetAll();
+	}
+	
+	@GetMapping(path = "/getByUserName/{username}")
+	public User GetAll(@PathVariable String username){
+		return userSevice.GetByUserName(username);
 	}
 	
 	@PostMapping(path = "/checkUser")

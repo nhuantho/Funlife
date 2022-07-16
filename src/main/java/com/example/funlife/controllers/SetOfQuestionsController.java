@@ -16,7 +16,7 @@ import com.example.funlife.models.SetOfQuestions;
 import com.example.funlife.services.SetOfQuestionsService;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin("https://funlifeversion1.netlify.app/")
 public class SetOfQuestionsController {
 	@Autowired
 	private SetOfQuestionsService setOfQuestionsService;

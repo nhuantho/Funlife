@@ -12,7 +12,7 @@ import com.example.funlife.models.UserSetOfQuestion;
 import com.example.funlife.services.UserSetOfQuestionService;
 
 @RestController
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin("https://funlifeversion1.netlify.app/")
 public class UserSetOfQuestionController {
 	@Autowired 
 	private UserSetOfQuestionService userSetOfQuestionService;

@@ -25,6 +25,10 @@ public class UserSevice {
 		return userResponitory.findAll();
 	}
 	
+	public User GetByUserName(String username){
+		return userResponitory.findById(username).orElse(null);
+	}
+	
 	public List<User> CheckUser(User user){
 		return userResponitory.CheckUser(user.getUserName(), user.getPassword());
 	}
